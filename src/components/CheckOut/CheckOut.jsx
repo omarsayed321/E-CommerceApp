@@ -12,7 +12,7 @@ export default function CheckOut() {
   let navigate = useNavigate();
   const { cartId,setTotalProductsCount,getCartItems,clearCart,productDetails } = useContext(CartContext);
 
-  const ogUrl = `${window.location.origin}/E-CommerceApp/#`;
+  const ogUrl = `${window.location.origin}/E-CommerceApp/`;
   const fixedUrl = encodeURIComponent(ogUrl);
 
   // validation
