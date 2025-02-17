@@ -48,7 +48,7 @@ export default function CheckOut() {
           }
         );
 
-        // window.location.href = res.data.session.url;
+        window.location.href = res.data.session.url;
 
         if(res.data.status == 'success'){
           toast.success('Success');
