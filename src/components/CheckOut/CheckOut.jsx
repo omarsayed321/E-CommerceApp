@@ -12,6 +12,8 @@ export default function CheckOut() {
   let navigate = useNavigate();
   const { cartId,setTotalProductsCount,getCartItems,clearCart,productDetails } = useContext(CartContext);
 
+  const ogUrl = `${window.location.origin}/E-CommerceApp/#`;
+  const fixedUrl = encodeURIComponent(ogUrl);
 
   // validation
   const validationSchema = yup.object().shape({
@@ -36,19 +38,8 @@ export default function CheckOut() {
       setMsg(null);
       setLoading(true);
       try {
-        // const res = await axios.post(
-        //   `https://ecommerce.routemisr.com/api/v1/orders/${cartId}`,
-        //   values,
-        //   {
-        //     headers: {
-        //       token: localStorage.getItem('token')
-        //     },
-        //   }
-        // );
-        
-
         const res = await axios.post(
-          `https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${cartId}?url=${window.location.origin}`,
+          `https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${cartId}?url=${fixedUrl}`,
           values,
           {
             headers: {
@@ -61,9 +52,6 @@ export default function CheckOut() {
 
         if(res.data.status == 'success'){
           toast.success('Success');
-          // setTotalProductsCount(0);
-          // getCartItems();
-          // clearCart();
         }
        
       } catch (error) {

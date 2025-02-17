@@ -1,7 +1,7 @@
 import { useContext, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { createHashRouter, RouterProvider } from 'react-router-dom'
 import Layout from './components/Layout/Layout'
 import Home from './components/Home/Home';
 import Cart from './components/Cart/Cart';
@@ -28,7 +28,7 @@ import AllOrders from './components/AllOrders/AllOrders'
 
 
 const queryClient = new QueryClient();
-const routes = createBrowserRouter([
+const routes = createHashRouter([
   {
     path: '', element: <Layout/>, children: [
       { index: true, element: <Gaurd><Home/></Gaurd> },

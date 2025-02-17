@@ -69,14 +69,10 @@ export default function Navbar(props) {
               <div className='relative inline-block mr-5 w-[1rem]'>
 
                 <i className=' relative fa-solid fa-xl fa-cart-shopping fs-3  right-nav-links '>  {cartItems == null ? null : <span className='text-white text-xs absolute -top-6 -right-2 px-1.5 py-0.5 rounded-sm bg-[#4fa74f] inline-block' >{cartItems}</span>}
-
                 </i>
-
               </div>
             </Link>
             <button onClick={logOut} className=' right-nav-links ' >Log out</button> </> : <>
-
-
             <Link className=" right-nav-links " to="login">Login</Link>
             <Link className=" right-nav-links " to="register">Register</Link></>
           }
